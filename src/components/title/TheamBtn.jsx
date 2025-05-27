@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { setTheam } from '../../slices/theamSlice'
 import { useEffect } from 'react'
+import iconMoon from '/icon-moon.svg'
+import iconSun from '/icon-sun.svg'
 
 const TheamBtn = () => {
   const dispatch = useDispatch()
@@ -16,7 +18,7 @@ const TheamBtn = () => {
     }
   }, [theam])
 
-  const img = theam === 'light' ? '/icon-moon.svg' : '/icon-sun.svg'
+  const img = theam === 'light' ? iconMoon : iconSun
 
   return (
     <div className="cursor-pointer">
