@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --breakpoint-xs: 375px;
+}
+
+body:not([class]) {
+  --main-background: #fafafa;
+  --bg-header-image: url('/bg-desktop-light.jpg');
+}
+
+body[class='dark'] {
+  --main-background: #171823;
+  --bg-header-image: url('/bg-desktop-dark.jpg');
+}
+
+#root {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-background);
+  background-image: var(--bg-header-image);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+@media screen and (max-width: 375px) {
+  #root {
+    background-size: auto 265px;
+  }
+}
